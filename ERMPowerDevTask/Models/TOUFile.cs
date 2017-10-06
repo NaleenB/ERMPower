@@ -10,6 +10,11 @@ namespace ERMPowerDevTask.Models
     {
         public string FileName { get; set; }
 
+        /// <summary>
+        /// Also known as the 50th percentile
+        /// </summary>
+        public double Median { get; set; }
+
         public List<TOUData> TOUDataList { get; set; }
     }
 }

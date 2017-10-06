@@ -8,7 +8,7 @@ namespace ERMPowerDevTask.Models
 {
     public class LPData
     {
-        public DateTime DateTime { get; set; }
+        public string DateTime { get; set; }
 
         public double DataVal { get; set; }
     }

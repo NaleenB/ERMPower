@@ -15,8 +15,8 @@ namespace ERMPowerDevTask.Tests
         [TestMethod]
         public void TestInvalidPath()
         {
-            FileProcessor fp = new FileProcessor("fakepath");
-            var result = fp.LoadData(out List<LPFile> lpList, out List<TOUFile> touList);
+            MedianProcessor fp = new MedianProcessor();
+            var result = fp.LoadFileData("fakepath");
 
             Assert.AreEqual(result, FileLoadResult.InvalidPath);
         }
@@ -24,8 +24,8 @@ namespace ERMPowerDevTask.Tests
         [TestMethod]
         public void TestNoFiles()
         {
-            FileProcessor fp = new FileProcessor(@"C:\");
-            var result = fp.LoadData(out List<LPFile> lpList, out List<TOUFile> touList);
+            MedianProcessor fp = new MedianProcessor();
+            var result = fp.LoadFileData(@"C:\");
 
             Assert.AreEqual(result, FileLoadResult.NoFilesFound);
         }
@@ -33,8 +33,8 @@ namespace ERMPowerDevTask.Tests
         [TestMethod]
         public void TestSuccessfulLoad()
         {
-            FileProcessor fp = new FileProcessor(@"D:\VSProjects\repos\ERMPowerDevTask\ERMPowerDevTask\CSV");
-            var result = fp.LoadData(out List<LPFile> lpList, out List<TOUFile> touList);
+            MedianProcessor fp = new MedianProcessor();
+            var result = fp.LoadFileData(@"C:\Users\linru\Source\Repos\ERMPower\ERMPowerDevTask\CSV");
 
             Assert.AreEqual(result, FileLoadResult.Success);
         }
