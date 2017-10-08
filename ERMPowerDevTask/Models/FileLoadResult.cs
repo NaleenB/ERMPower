@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ERMPowerDevTask.Models
 {
-    public class TOUData
+    public enum FileLoadResult
     {
-        public string DateTime { get; set; }
-
-        public string DataType { get; set; }
-
-        public double Energy { get; set; }
+        NoFilesFound,
+        CorruptedData,
+        InvalidPath,
+        FileUsedByAnotherProgram,
+        Success
     }
 }

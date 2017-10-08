@@ -1,4 +1,5 @@
-﻿using ERMPowerDevTask.Processors;
+﻿using ERMPowerDevTask.Models;
+using ERMPowerDevTask.Processors;
 using ERMPowerDevTask.Reports;
 using System;
 using System.Collections.Generic;
@@ -21,15 +22,22 @@ namespace ERMPowerDevTask
 
             // Required file processor is initialized
             IFileProcessor fileProcessor = new MedianProcessor();
-                        
+
             // load data in to class objects
-            fileProcessor.LoadFileData(csvPath);
+            FileLoadResult fileLoadResult = fileProcessor.LoadFileData(csvPath);
 
-            // process data in the class objects
-            fileProcessor.ProcessData();
+            if (fileLoadResult == FileLoadResult.Success)
+            {
+                // process data in the class objects
+                fileProcessor.ProcessData();
 
-            // print reports
-            fileProcessor.PrintReports(reportWriter);
+                // print reports
+                fileProcessor.PrintReports(reportWriter);
+            }
+            else
+            {
+                Console.WriteLine("Error: " + fileLoadResult.ToString());
+            }
 
             Console.ReadLine();
         }

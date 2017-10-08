@@ -10,6 +10,8 @@ namespace ERMPowerDevTask.Models
     {
         public string DateTime { get; set; }
 
+        public string DataType { get; set; }
+
         public double DataVal { get; set; }
     }
 }

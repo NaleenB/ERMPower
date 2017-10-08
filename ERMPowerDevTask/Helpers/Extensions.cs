@@ -16,6 +16,11 @@ namespace ERMPowerDevTask.Helpers
         /// <returns></returns>
         public static double GetPercentile(this IEnumerable<double> data, double excelPercentile)
         {
+            if (data.Count()==0)
+            {
+                return 0;
+            }
+
             double[] sequence = data.ToArray();
             Array.Sort(sequence);
             int N = sequence.Length;
@@ -30,5 +35,6 @@ namespace ERMPowerDevTask.Helpers
                 return sequence[k - 1] + d * (sequence[k] - sequence[k - 1]);
             }
         }
+        
     }
 }

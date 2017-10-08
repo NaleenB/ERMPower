@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Helpers\CSVMapper.cs" />
     <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Models\FileLoadResult.cs" />
     <Compile Include="Models\LPData.cs" />
     <Compile Include="Models\LPFile.cs" />
     <Compile Include="Models\TOUData.cs" />

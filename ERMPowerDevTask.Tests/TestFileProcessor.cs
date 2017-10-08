@@ -33,8 +33,10 @@ namespace ERMPowerDevTask.Tests
         [TestMethod]
         public void TestSuccessfulLoad()
         {
+            var rootPath = AppDomain.CurrentDomain.BaseDirectory;
+
             MedianProcessor fp = new MedianProcessor();
-            var result = fp.LoadFileData(@"C:\Users\linru\Source\Repos\ERMPower\ERMPowerDevTask\CSV");
+            var result = fp.LoadFileData(rootPath);
 
             Assert.AreEqual(result, FileLoadResult.Success);
         }

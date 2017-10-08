@@ -13,6 +13,7 @@ namespace ERMPowerDevTask.Helpers
         public CSVMapperLP()
         {
             Map(m => m.DateTime).Index(3);
+            Map(m => m.DataType).Index(4);
             Map(m => m.DataVal).Index(5);
         }
     }
@@ -23,6 +24,7 @@ namespace ERMPowerDevTask.Helpers
         public CSVMapperTOU()
         {
             Map(m => m.DateTime).Index(3);
+            Map(m => m.DataType).Index(4);
             Map(m => m.Energy).Index(5);
         }
     }
