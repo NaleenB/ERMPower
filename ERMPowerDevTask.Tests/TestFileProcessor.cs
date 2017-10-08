@@ -40,5 +40,33 @@ namespace ERMPowerDevTask.Tests
 
             Assert.AreEqual(result, FileLoadResult.Success);
         }
+
+        [TestMethod]
+        public void TestRequiredDataIsLoadedFromSampleFile()
+        {
+            var rootPath = AppDomain.CurrentDomain.BaseDirectory;
+
+            MedianProcessor fp = new MedianProcessor();
+            var result = fp.LoadFileData(rootPath);
+
+            Assert.AreEqual(result, FileLoadResult.Success);
+
+            Assert.AreEqual(fp.lpFiles[0].LPDataList.Count, 384);
+        }
+
+        [TestMethod]
+        public void TestRightDataIsFilteredFromSampleFile()
+        {
+            var rootPath = AppDomain.CurrentDomain.BaseDirectory;
+
+            MedianProcessor fp = new MedianProcessor();
+            var result = fp.LoadFileData(rootPath);
+
+            Assert.AreEqual(result, FileLoadResult.Success);
+
+            fp.ProcessData();
+
+            Assert.AreEqual(fp.lpFiles[0].LPDataList.Count, 96);
+        }
     }
 }
