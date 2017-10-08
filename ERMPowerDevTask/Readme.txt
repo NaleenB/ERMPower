@@ -9,6 +9,7 @@
 
 How To Run On Visual Studio
 1. In App.config change "CSVLocation"
+2. Change processor property enableAdditionalConsoleLogs to true to see additional logs on the console
 2. Select ERMPowerDevTask as startup project and click start
 
 How To Run Compiled
