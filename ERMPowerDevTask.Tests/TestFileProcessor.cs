@@ -16,7 +16,7 @@ namespace ERMPowerDevTask.Tests
         public void TestInvalidPath()
         {
             MedianProcessor fp = new MedianProcessor();
-            var result = fp.LoadFileData("fakepath");
+            var result = fp.LoadFileData(@"x\y\z");
 
             Assert.AreEqual(result, FileLoadResult.InvalidPath);
         }
